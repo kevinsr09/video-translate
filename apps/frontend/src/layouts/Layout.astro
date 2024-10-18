@@ -22,29 +22,32 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		--bg-color: #fbf8f6;
+		--bg-nav-color: #f3ebe5;
+	}
+
+	@font-face {
+		font-family: "Poppins-Regular";
+		src:
+			url("/fonts/Poppins-Regular.woff2") format("woff2"),
+			url("/fonts/Poppins-Regular.ttf") format("truetype");
+	}
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
 	}
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: "Poppins-Regular", system-ui, sans-serif;
+		background: var(--bg-color);
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+
+	body,
+	html {
+		width: 100dvw;
+		height: 100vh;
+		overflow: hidden;
 	}
 </style>
