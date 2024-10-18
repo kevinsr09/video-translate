@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nrwl/nx/refs/heads/master/packages/nx/schemas/project-schema.json",
+  "name": "frontend",
+  "root": "apps/frontend",
+  "namedInputs": {
+    "default": [
+      "{projectRoot}/**/*"
+    ]
+  },
+  "targets": {
+    "dev": {
+      "command": "npm run dev",
+      "options": {
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}

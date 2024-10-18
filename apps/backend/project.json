@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/nrwl/nx/refs/heads/master/packages/nx/schemas/project-schema.json",
+  "name": "backend",
+  "root": "apps/backend",
+  "targets": {
+    "dev": {
+      "command": "pipenv run dev",
+      "options": {
+        "cwd": "{projectRoot}"
+      }
+    }
+  }
+}
