@@ -10,19 +10,9 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-
-
-
-
-
-# import pyttsx3
-# engine = pyttsx3.init()  # object creation
-
-# engine.save_to_file('hola, mi nombre es kevin y me gusta comer pan', 'test.mp3')
-# engine.runAndWait()
+@app.post("/tts")
+def read_item():
+    return {"item_id": 1, "q": "1"}
 
 
 # from deep_translator import GoogleTranslator
