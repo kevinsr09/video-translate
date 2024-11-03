@@ -1,19 +1,8 @@
-from typing import Union
-
 from fastapi import FastAPI
-
+from src.routes.router import router
 app = FastAPI()
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.post("/tts")
-def read_item():
-    return {"item_id": 1, "q": "1"}
-
+app.include_router(router)
 
 # from deep_translator import GoogleTranslator
 # to_translate = 'I want to translate this text'

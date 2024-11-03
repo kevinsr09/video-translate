@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Verificar si se ha pasado un parámetro
+if [ -z "$1" ]; then
+    echo "Error: Se debe pasar un parámetro."
+    exit 1
+fi
+
+# Si se pasó un parámetro, puedes continuar con el resto del script
+echo "El parámetro pasado es: $1"
