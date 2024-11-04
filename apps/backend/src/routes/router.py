@@ -1,7 +1,10 @@
 from fastapi import APIRouter
-from src.routes.api.stt import stt_router
-from src.routes.api.videos import videos_router
+from src.routes.stt import stt_router
+from src.routes.topic import topic_router
+from src.routes.video import video_router
+
 router = APIRouter()
 
-router.include_router(router=stt_router, prefix="/api/stt")
-router.include_router(router=videos_router, prefix="/api/videos")
+router.include_router(router=stt_router, prefix="/api")
+router.include_router(router=topic_router, prefix="/api")
+router.include_router(router=video_router, prefix="/api")

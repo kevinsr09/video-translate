@@ -4,7 +4,7 @@
   "root": "apps/backend",
   "targets": {
     "dev": {
-      "command": "pipenv run dev",
+      "command": "fastapi dev src/app.py --host 0.0.0.0 --port 4001",
       "options": {
         "cwd": "{projectRoot}"
       }
