@@ -12,9 +12,9 @@ def list_files(directory):
         return []
 
 
-def create_directory(directory):
+def create_directory(path_directory: str) -> None:
     try:
-        mkdir(directory)
+        mkdir(path_directory)
     except OSError as error:
         print(error)
         raise
