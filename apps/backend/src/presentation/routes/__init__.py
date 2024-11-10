@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 # from src.presentation.routes.stt import stt_router
-from src.presentation.routes.topic import topic_router
+from src.presentation.routes.topic_routes import topic_router
 # from src.presentation.routes.video import video_router
 
 router = APIRouter()

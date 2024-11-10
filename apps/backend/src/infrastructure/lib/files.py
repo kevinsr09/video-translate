@@ -1,7 +1,7 @@
 from os import listdir, mkdir
 
 
-def list_files(directory):
+def list_files(directory: str) -> list[str]:
     try:
         return listdir(directory)
     except FileNotFoundError:

@@ -1,7 +1,7 @@
 from src.domain.entities.topic import Topic
 from src.domain.repositories.topic_repository import TopicRepository
 from src.infrastructure.config.envs import Envs
-from src.infrastructure.lib.files import create_directory
+from src.infrastructure.lib.files import create_directory, list_files
 from pathlib import Path
 
 
@@ -16,4 +16,12 @@ class LocalTopicRepository(TopicRepository):
         return
 
     def search_all(self) -> list[Topic]:
-        return [Topic("kevin")]
+        topics_primitives = list_files(self.envs.path_folder())
+        topics = [Topic(topic) for topic in topics_primitives]
+
+        return topics
+
+    def search_by_name(self, name: str) -> Topic:
+        topic_primitive = list_files(self.envs.path_folder())
+        topic_primitive.index(name)
+        return Topic(name)

@@ -8,3 +8,6 @@ class TopicSearcher():
 
     def search_all(self) -> list[Topic]:
         return self.repository.search_all()
+
+    def search_by_name(self, name: str) -> Topic:
+        return self.repository.search_by_name(name)
