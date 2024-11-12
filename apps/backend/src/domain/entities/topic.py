@@ -1,11 +1,14 @@
+from .topic_name import TopicName
+
+
 class Topic():
     def __init__(self, name: str, description: str | None = None):
-        self.__name: str = name
+        self.__name: TopicName = TopicName(name)
         self.__description: str | None = description
 
     @property
-    def name(self):
-        return self.__name
+    def name(self) -> str:
+        return self.__name.value
 
     @property
     def description(self):
