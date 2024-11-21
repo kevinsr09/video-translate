@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from src.domain.entities.video import Video
+from src.domain.video.video import Video
 
 
 class VideoRepository(metaclass=ABCMeta):

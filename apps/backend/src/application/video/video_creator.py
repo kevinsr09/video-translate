@@ -1,6 +1,6 @@
 from collections.abc import Buffer
-from src.domain.entities.video import Video
-from src.domain.repositories.video_repository import VideoRepository
+from src.domain.video.video import Video
+from src.domain.video.video_repository import VideoRepository
 
 
 class VideoCreator:

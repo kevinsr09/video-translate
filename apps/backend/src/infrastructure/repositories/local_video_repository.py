@@ -1,5 +1,5 @@
-from src.domain.entities.video import Video
-from src.domain.repositories.video_repository import VideoRepository
+from src.domain.video.video import Video
+from src.domain.video.video_repository import VideoRepository
 from src.infrastructure.config.envs import Envs
 from src.infrastructure.lib.files import create_directory, list_files
 from pathlib import Path
@@ -13,7 +13,7 @@ class LocalVideoRepository(VideoRepository):
     def save(self, video: Video) -> None:
 
         if video.data == None:
-            return
+            raise
 
         path = Path(self.envs.path_folder()).joinpath(
             video.topic_name).joinpath(video.name).__str__()

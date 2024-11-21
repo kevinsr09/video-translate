@@ -1,5 +1,5 @@
-from src.domain.entities.topic import Topic
-from src.domain.repositories.topic_repository import TopicRepository
+from src.domain.topic.topic import Topic
+from src.domain.topic.topic_repository import TopicRepository
 
 
 class TopicSearcher():

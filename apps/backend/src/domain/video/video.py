@@ -1,4 +1,4 @@
-from .topic_name import TopicName
+from src.domain.topic.topic_name import TopicName
 from collections.abc import Buffer
 
 

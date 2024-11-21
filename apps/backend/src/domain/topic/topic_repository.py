@@ -1,5 +1,5 @@
 from abc import ABCMeta, abstractmethod
-from src.domain.entities.topic import Topic
+from src.domain.topic.topic import Topic
 
 
 class TopicRepository(metaclass=ABCMeta):
