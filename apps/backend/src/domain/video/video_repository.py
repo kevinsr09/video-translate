@@ -8,9 +8,9 @@ class VideoRepository(metaclass=ABCMeta):
     def save(self, video: Video) -> None:
         pass
 
-    # @abstractmethod
-    # def search_all() -> list[Video]:
-    #     pass
+    @abstractmethod
+    def search_all() -> list[Video]:
+        pass
 
     # @abstractmethod
     # def search_by_name(self, name: str) -> Topic:

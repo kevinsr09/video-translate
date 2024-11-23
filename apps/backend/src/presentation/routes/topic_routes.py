@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from src.application.topic.topic_creator import TopicCreator
 from src.application.topic.topic_searcher import TopicSearcher
-
+from src.shared.domain.domain_error import DomainError
 from src.infrastructure.repositories.local_topic_repository import LocalTopicRepository, Envs
 from pydantic import BaseModel
 
@@ -44,7 +44,14 @@ def topic_create(topic: TopicRequestModel):
     try:
         topic_creator.create(topic.name)
         return
-    except:
+
+    except DomainError as err:
+        print(err)
+        detail = {"mesagge": f"{err.message}", "payload": f"{err.payload}"}
+        raise HTTPException(status_code=400, detail=detail)
+
+    except Exception as err:
+        print(err)
         raise HTTPException(status_code=409, detail="Topic alredy exist")
 
 
